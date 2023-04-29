@@ -23,7 +23,9 @@ class CreateBookTest extends TestCase
 
         $reqParams = array_merge($reqParams, $merge);
 
-        return $this->json('POST', '/api/books', $reqParams);
+        $authHeader = $this->get_auth_http_header($this->create_user());
+
+        return $this->json('POST', '/api/books', $reqParams, $authHeader);
     }
 
         /**

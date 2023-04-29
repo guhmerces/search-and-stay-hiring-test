@@ -18,7 +18,9 @@ class DeleteBookTest extends TestCase
         Book::factory()->make()->save();
         $book = Book::all()->last();
 
-        $response = $this->delete('/api/books/' . $book->id);
+        $authHeader = $this->get_auth_http_header($this->create_user());
+
+        $response = $this->delete('/api/books/' . $book->id, [], $authHeader);
         $response->assertStatus(200);
         $this->assertEmpty(Book::all()->toArray());
     }

@@ -18,7 +18,9 @@ class GetBookTest extends TestCase
         Book::factory()->make()->save();
         $book = Book::all()->last();
 
-        $response = $this->get('/api/books/' . $book->id);
+        $authHeader = $this->get_auth_http_header($this->create_user());
+
+        $response = $this->get('/api/books/' . $book->id, $authHeader);
         $response->assertStatus(200);
 
         $this->assertArrayHasKey('id', $response->decodeResponseJson()->json());

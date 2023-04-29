@@ -24,7 +24,9 @@ class UpdateBookTest extends TestCase
         Book::factory()->make()->save();
         $book = Book::all()->last();
 
-        $response = $this->put('/api/books/' . $book->id, $updateParams);
+        $authHeader = $this->get_auth_http_header($this->create_user());
+
+        $response = $this->put('/api/books/' . $book->id, $updateParams, $authHeader);
         $response->assertStatus(200);
 
         $book = Book::all()->last();
