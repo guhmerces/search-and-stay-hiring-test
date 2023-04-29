@@ -54,10 +54,14 @@ class BooksController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified book.
      */
     public function destroy(string $id)
     {
-        //
+        $book = Book::findOrFail($id);
+        
+        $book->delete();
+
+        return response('', 200);
     }
 }
