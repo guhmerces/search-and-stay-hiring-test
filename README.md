@@ -295,3 +295,32 @@ X-RateLimit-Limit: 60
 X-RateLimit-Remaining: 58
 
 ```
+
+### User logout (Bearer token included to the HTTP requst header)
+
+```
+POST /api/logout HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Length: 0
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 29 Apr 2023 15:29:44 GMT, Sat, 29 Apr 2023 15:29:44 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+
+
+```
