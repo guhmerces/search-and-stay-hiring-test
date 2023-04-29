@@ -1,13 +1,13 @@
 
 # Book CRUD - Search and Stay 2023 Dev Team Test - Backend
 
-<b>** To access the requirements for this challange, click [here]()</b>
+<b>** To access the requirements for this challange, click [here](https://github.com/guhmerces/search-and-stay-hiring-test/blob/master/challenge/SAS-Backend-Task.docx)</b>
 
 Hi! I'm [Gustavo](https://github.com/guhmerces) and this repository contains my implementation for the backend technical challenge proposed by Search and Stay.
 
 ## Setup
 
-This project does not come with Dockerfile ready. To run this project, make sure you have PHP8 and MYSQL installed.
+This project does not come with a Dockerfile ready. To run this project, make sure you have PHP8 and MYSQL installed.
 
 Please follow the instructions below:
 
@@ -54,7 +54,7 @@ php artisan serve
 The process will be vailable at port 8000 by default.
 
 
-## Using the API
+## Using the API (Please include <i>Accept: application/json</i> to request headers)
 
 ### Registering a user
 
@@ -129,7 +129,7 @@ X-RateLimit-Remaining: 58
 
 ```
 
-### Create a book (with Bearer token included to the HTTP requst header)
+### Create a book (with Bearer token included to the HTTP request header)
 
 ```
 POST /api/books HTTP/1.1
@@ -161,7 +161,7 @@ X-RateLimit-Limit: 60
 X-RateLimit-Remaining: 59
 
 ```
-### Get a list of created books (Bearer token included to the HTTP requst header)
+### Get a list of created books (Bearer token included to the HTTP request header)
 
 ```
 GET /api/books HTTP/1.1
@@ -193,14 +193,14 @@ X-RateLimit-Remaining: 59
         "isbn": "9781937785536",
         "name": "Programming Erlang",
         "updated_at": "2023-04-29T15:19:04.000000Z",
-        "value": 39
+        "value": "39.48"
     }
 ]
 
 ```
 
 
-### Get the recently created book (Bearer token included to the HTTP requst header)
+### Get the recently created book (Bearer token included to the HTTP request header)
 
 ```
 GET /api/books/5 HTTP/1.1
@@ -235,7 +235,7 @@ X-RateLimit-Remaining: 52
 }
 ```
 
-### Update a book (Bearer token included to the HTTP requst header)
+### Update a book (Bearer token included to the HTTP request header)
 
 ```
 PUT /api/books/5 HTTP/1.1
@@ -268,7 +268,7 @@ X-RateLimit-Remaining: 59
 
 ```
 
-### Delete a book (Bearer token included to the HTTP requst header)
+### Delete a book (Bearer token included to the HTTP request header)
 
 ```
 DELETE /api/books/5 HTTP/1.1
@@ -296,7 +296,7 @@ X-RateLimit-Remaining: 58
 
 ```
 
-### User logout (Bearer token included to the HTTP requst header)
+### User logout (Bearer token included to the HTTP request header)
 
 ```
 POST /api/logout HTTP/1.1
