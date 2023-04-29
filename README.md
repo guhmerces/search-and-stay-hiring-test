@@ -46,6 +46,11 @@ Run database migrations
 php artisan migrate
 ```
 
+Generate application key
+```sh
+php artisan key:generate
+```
+
 Run tests
 ```sh
 php artisan test
