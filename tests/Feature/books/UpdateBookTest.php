@@ -5,7 +5,6 @@ namespace Tests\Feature\books;
 use App\Models\Book;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Faker\Factory as Faker;
-use Illuminate\Testing\TestResponse;
 use Tests\TestCase;
 
 class UpdateBookTest extends TestCase
