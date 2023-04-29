@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
-use Illuminate\Http\Request;
 
 class BooksController extends Controller
 {
