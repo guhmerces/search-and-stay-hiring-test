@@ -129,3 +129,69 @@ X-RateLimit-Remaining: 58
 
 ```
 
+### Create a book (with Bearer token included to the HTTP requst header)
+
+```
+POST /api/books HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Length: 73
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+{
+    "name": "Programming Erlang",
+    "isbn": "9781937785536",
+    "value": "39.48"
+}
+
+
+HTTP/1.1 201 Created
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 29 Apr 2023 15:19:04 GMT, Sat, 29 Apr 2023 15:19:04 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+
+```
+### Get the recent created book (Bearer token included to the HTTP requst header)
+
+```
+GET /api/books/5 HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: application/json
+Date: Sat, 29 Apr 2023 15:22:15 GMT, Sat, 29 Apr 2023 15:22:15 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 52
+
+{
+    "created_at": "2023-04-29T15:19:04.000000Z",
+    "id": 5,
+    "isbn": "9781937785536",
+    "name": "Programming Erlang",
+    "updated_at": "2023-04-29T15:19:04.000000Z",
+    "value": 39.48
+}
+```
