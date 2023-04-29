@@ -29,11 +29,13 @@ class BooksController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified book.
      */
     public function show(string $id)
     {
-        //
+        $book = Book::findOrFail($id);
+
+        return $book;
     }
 
     /**
