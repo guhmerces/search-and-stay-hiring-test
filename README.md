@@ -41,6 +41,11 @@ Install dependencies
 composer install
 ```
 
+Run database migrations
+```sh
+php artisan migrate
+```
+
 Run tests
 ```sh
 php artisan test
