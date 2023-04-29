@@ -18,7 +18,7 @@ class CreateBookTest extends TestCase
         $reqParams = [
             'name' => $faker->name . ' Book',
             'isbn' => rand(1000000000000, 9999999999999),
-            'value' => rand(1, 999999),
+            'value' => "98.99",
         ];
 
         $reqParams = array_merge($reqParams, $merge);

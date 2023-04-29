@@ -18,7 +18,7 @@ class UpdateBookTest extends TestCase
         $updateParams = [
             'name' => $faker->name . ' Book',
             'isbn' => rand(1000000000000, 9999999999999),
-            'value' => rand(1, 999999),
+            'value' => "10.55",
         ];
 
         Book::factory()->make()->save();

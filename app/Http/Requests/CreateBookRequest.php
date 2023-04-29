@@ -24,7 +24,14 @@ class CreateBookRequest extends FormRequest
         return [
             'name' => 'required|string',
             'isbn' => 'required|numeric',
-            'value' => 'required|regex:/^\d+(\.\d{1,2})?$/', // money - examples: 10, 10.5, 10.05
+            'value' => 'required|regex:/^[0-9]*\.[0-9][0-9]$/', // money format with 2 decimal places
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'value.regex' => 'The value attribute must contain only numbers and 2 decimal places. E.g 54.99',
         ];
     }
 }
