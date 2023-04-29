@@ -161,7 +161,46 @@ X-RateLimit-Limit: 60
 X-RateLimit-Remaining: 59
 
 ```
-### Get the recent created book (Bearer token included to the HTTP requst header)
+### Get a list of created books (Bearer token included to the HTTP requst header)
+
+```
+GET /api/books HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: application/json
+Date: Sat, 29 Apr 2023 15:24:44 GMT, Sat, 29 Apr 2023 15:24:44 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+
+[
+    {
+        "created_at": "2023-04-29T15:19:04.000000Z",
+        "id": 5,
+        "isbn": "9781937785536",
+        "name": "Programming Erlang",
+        "updated_at": "2023-04-29T15:19:04.000000Z",
+        "value": 39
+    }
+]
+
+```
+
+
+### Get the recently created book (Bearer token included to the HTTP requst header)
 
 ```
 GET /api/books/5 HTTP/1.1
@@ -194,4 +233,65 @@ X-RateLimit-Remaining: 52
     "updated_at": "2023-04-29T15:19:04.000000Z",
     "value": 39.48
 }
+```
+
+### Update a book (Bearer token included to the HTTP requst header)
+
+```
+PUT /api/books/5 HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Length: 90
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+{
+    "isbn": "9781937785536",
+    "name": "Programming Erlang by Joe Armstrong",
+    "value": "49.48"
+}
+
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 29 Apr 2023 15:26:01 GMT, Sat, 29 Apr 2023 15:26:01 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 59
+
+```
+
+### Delete a book (Bearer token included to the HTTP requst header)
+
+```
+DELETE /api/books/5 HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Authorization: Bearer 12|X91YFKiRJt569FZmjHInloLZHtx9R5TOn5w9tE1R
+Connection: keep-alive
+Content-Length: 0
+Content-Type: application/json
+Host: localhost:8000
+User-Agent: HTTPie/2.6.0
+
+
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, private
+Connection: close
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 29 Apr 2023 15:27:00 GMT, Sat, 29 Apr 2023 15:27:00 GMT
+Host: localhost:8000
+X-Powered-By: PHP/8.2.0
+X-RateLimit-Limit: 60
+X-RateLimit-Remaining: 58
+
 ```
