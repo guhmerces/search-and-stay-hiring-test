@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateBookRequest;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BooksController extends Controller
@@ -15,11 +17,15 @@ class BooksController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created book.
      */
-    public function store(Request $request)
+    public function store(CreateBookRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        Book::create($validatedData);
+
+        return response('', 201);
     }
 
     /**
